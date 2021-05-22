@@ -71,7 +71,7 @@ async def join(ctx):
         return
 
     channel = ctx.author.voice.channel
-    await ctx.send(type(channel))
+    
     await channel.connect()
     await ctx.send('Opoo bro')
 
@@ -100,7 +100,7 @@ async def play(ctx, *url):
             await ctx.send('Sek lah jek onok lagu main iki. Pakek "stop" lek mau main lagu laen')
             return
         voice = discord.utils.get(bot.voice_clients, guild=ctx.guild)
-
+        await ctx.send(type(voice))
         if voice.is_playing():
             await ctx.send('sek')
         ydl_opts = {
