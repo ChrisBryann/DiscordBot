@@ -1,9 +1,9 @@
 asyncio
-async-generator==1.10
-async-timeout==3.0.1
-discord.py==1.7.2
-ffmpeg==1.4
-giphy-client==1.0.0
+async-generator
+async-timeout
+discord.py
+ffmpeg
+giphy-client
 PyNaCl
-python-dotenv==0.17.1
+python-dotenv
 youtube-dl
