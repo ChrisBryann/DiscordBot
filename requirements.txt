@@ -1,4 +1,4 @@
-git+https://github.com/Rapptz/discord.py
+asyncio
 async-generator==1.10
 async-timeout==3.0.1
 discord.py==1.7.2
