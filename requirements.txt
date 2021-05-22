@@ -152,7 +152,7 @@ pyparsing==2.4.7
 pyreadline==2.1
 pyrsistent
 PySocks==1.7.1
-pytest==0.0.0
+pytest
 python-dateutil==2.8.1
 python-dotenv==0.17.1
 python-jsonrpc-server
