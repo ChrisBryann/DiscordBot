@@ -23,7 +23,6 @@ bkcharts
 bleach
 bokeh
 boto
-Bottleneck
 brotlipy
 certifi
 cffi
