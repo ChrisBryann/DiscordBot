@@ -68,8 +68,10 @@ async def join(ctx):
     voice = discord.utils.get(bot.voice_clients, guild=ctx.guild)
     if voice:
         await ctx.send("Ak wes masuk masbro")
+        return
 
     channel = ctx.author.voice.channel
+    await ctx.send(type(channel))
     await channel.connect()
     await ctx.send('Opoo bro')
 
