@@ -4,5 +4,6 @@ async-timeout==3.0.1
 discord.py==1.7.2
 ffmpeg==1.4
 giphy-client==1.0.0
+PyNaCl
 python-dotenv==0.17.1
 youtube-dl==2021.5.16
