@@ -8,6 +8,20 @@ import giphy_client
 from giphy_client.rest import ApiException
 from dotenv import load_dotenv
 from discord.ext import commands
+import ctypes
+import ctypes.util
+
+print("ctypes - Find opus:")
+a = ctypes.util.find_library('opus')
+print(a)
+
+print("Discord - Load Opus:")
+b = discord.opus.load_opus(a)
+print(b)
+
+print("Discord - Is loaded:")
+c = discord.opus.is_loaded()
+print(c)
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
