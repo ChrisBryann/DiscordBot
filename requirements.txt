@@ -1,10 +1,12 @@
+https://github.com/kitcast/buildpack-ffmpeg.git
+https://github.com/xrisk/heroku-opus.git
 asyncio
 async-generator
 async-timeout
-ctypes
 discord.py
 ffmpeg
 giphy-client
 PyNaCl
 python-dotenv
 youtube-dl
+wheel
