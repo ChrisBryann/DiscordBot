@@ -95,13 +95,11 @@ async def play(ctx, *url):
             await ctx.send("Ndi lagune bro")
             return
         url = " ".join(url)
-        print(url)
-        try:
-            channel = ctx.author.voice.channel
+
+        channel = ctx.author.voice.channel
+        if not channel:
             await channel.connect()
-        except:
-            await ctx.send('Sek lah jek onok lagu main iki. Pakek "stop" lek mau main lagu laen')
-            return
+
         voice = discord.utils.get(bot.voice_clients, guild=ctx.guild)
         if voice.is_playing():
             await ctx.send('sek')
@@ -133,7 +131,7 @@ async def play(ctx, *url):
         while voice.is_playing() or voice.is_paused():  # Checks if voice is playing
             await asyncio.sleep(1)  # While it's playing it sleeps for 1 second
         else:
-            await asyncio.sleep(5)  # If it's not playing it waits 15 seconds
+            await asyncio.sleep(15)  # If it's not playing it waits 15 seconds
             while voice.is_playing() or voice.is_paused():  # and checks once again if the bot is not playing
                 break  # if it's playing it breaks
             else:
