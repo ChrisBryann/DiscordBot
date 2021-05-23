@@ -206,7 +206,7 @@ async def create_channel(ctx, channel_name='real-python'):
 async def sauce(ctx):
     number = str(random.choice(range(100000, 360001)))
     await ctx.send(f'Here honey {number}')
-    await ctx.send(discord.Embed(f'https://nhentai.net/g/{number}'))
+    await ctx.send(embed=discord.Embed(url=f'https://nhentai.net/g/{number}'))
 
 @bot.command(help="Shows gif, leave blank for random gif or specificy keyword")
 async def gif(ctx, *q):
