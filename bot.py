@@ -61,7 +61,8 @@ async def on_member_join(member):
     )
 @bot.event
 async def on_member_remove(member):
-    pass
+    channel = discord.utils.get(member.guild.channels, name="general")
+    await channel.send(f'See ya {member.name}!')
 
 @bot.command(name="keneo", help="GET OVER HERE!")
 async def join(ctx):

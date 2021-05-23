@@ -191,7 +191,6 @@ sphinxcontrib-websupport
 spyder
 spyder-kernels
 SQLAlchemy
-statsmodels==0.12.0
 sympy
 tables==3.6.1
 tblib
