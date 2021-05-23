@@ -3,25 +3,12 @@ import os
 import random
 import discord
 import youtube_dl
+import asyncio
 import webbrowser
 import giphy_client
 from giphy_client.rest import ApiException
 from dotenv import load_dotenv
 from discord.ext import commands
-import ctypes
-import ctypes.util
-
-print("ctypes - Find opus:")
-a = ctypes.util.find_library('opus')
-print(a)
-
-print("Discord - Load Opus:")
-b = discord.opus.load_opus(a)
-print(b)
-
-print("Discord - Is loaded:")
-c = discord.opus.is_loaded()
-print(c)
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -115,7 +102,6 @@ async def play(ctx, *url):
             await ctx.send('Sek lah jek onok lagu main iki. Pakek "stop" lek mau main lagu laen')
             return
         voice = discord.utils.get(bot.voice_clients, guild=ctx.guild)
-        await ctx.send(type(voice))
         if voice.is_playing():
             await ctx.send('sek')
         ydl_opts = {
@@ -142,13 +128,17 @@ async def play(ctx, *url):
                 title = info['title']
                 info = info['url']
 
-        # with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-        #     ydl.download([url])
-        # for file in os.listdir("./"):
-        #     if file.endswith(".mp3"):
-        #         os.rename(file, "song.mp3")
         voice.play(discord.FFmpegPCMAudio(info, **FFMPEG_OPTIONS))
         await ctx.send(f"**Now Playing**: {title}")
+
+        while voice.is_playing():  # Checks if voice is playing
+            await asyncio.sleep(1)  # While it's playing it sleeps for 1 second
+        else:
+            await asyncio.sleep(15)  # If it's not playing it waits 15 seconds
+            while voice.is_playing():  # and checks once again if the bot is not playing
+                break  # if it's playing it breaks
+            else:
+                await voice.disconnect()
 
 @bot.command()
 async def pause(ctx):
