@@ -97,12 +97,11 @@ async def play(ctx, *url):
         url = " ".join(url)
 
         channel = ctx.author.voice.channel
-        if not channel:
-            await channel.connect()
-
         voice = discord.utils.get(bot.voice_clients, guild=ctx.guild)
-        if voice.is_playing():
-            await ctx.send('sek')
+
+        if not voice.is_connected():
+            await channel.connect()
+        
         ydl_opts = {
             'noplaylist': True,
             'default_search': 'auto',
@@ -135,6 +134,7 @@ async def play(ctx, *url):
             while voice.is_playing() or voice.is_paused():  # and checks once again if the bot is not playing
                 break  # if it's playing it breaks
             else:
+                await ctx.send('Metu sek yo. Gak onok sg mau maen lagu.')
                 await voice.disconnect()
 
 @bot.command()
