@@ -132,9 +132,7 @@ async def play(ctx, *url):
         # for file in os.listdir("./"):
         #     if file.endswith(".mp3"):
         #         os.rename(file, "song.mp3")
-        await ctx.send("ok")
         voice.play(discord.FFmpegPCMAudio(info, **FFMPEG_OPTIONS))
-        await ctx.send("OKKKK")
         await ctx.send(f"**Now Playing**: {title}")
 
 @bot.command()
