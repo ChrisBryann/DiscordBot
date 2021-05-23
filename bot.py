@@ -120,14 +120,12 @@ async def play(ctx, *url):
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             if "https" in url:
                 info = ydl.extract_info(url, download=False)
-                title = info['title']
-                info = info['url']
 
             else:
-                info = ydl.extract_info(f"ytsearch:{url}", download=False)
-                title = info['title']
-                info = info['url']
+                info = ydl.extract_info(f"ytsearch:{url}", download=False)['entries'][0]
 
+            title = info['title']
+            info = info['url']
         voice.play(discord.FFmpegPCMAudio(info, **FFMPEG_OPTIONS))
         await ctx.send(f"**Now Playing**: {title}")
 
