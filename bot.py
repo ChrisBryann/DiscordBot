@@ -119,12 +119,12 @@ async def play(ctx, *url):
 
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             if "https" in url:
-                info = ydl.extract_info(url, download=False)['formats'][0]
+                info = ydl.extract_info(url, download=False)
                 title = info['title']
                 info = info['url']
 
             else:
-                info = ydl.extract_info(f"ytsearch:{url}", download=False)['entries'][0]
+                info = ydl.extract_info(f"ytsearch:{url}", download=False)
                 title = info['title']
                 info = info['url']
 
