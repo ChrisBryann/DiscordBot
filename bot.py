@@ -20,7 +20,7 @@ intents.members = True
 help_command = commands.DefaultHelpCommand(
     no_category = 'Commands made by WotterMelown'
 )
-bot = commands.Bot(command_prefix=re.compile('yen ', re.I), intents=intents, help_command=help_command)
+bot = commands.Bot(command_prefix='yen ', intents=intents, help_command=help_command)
 
 
 @bot.event
