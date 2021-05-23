@@ -130,11 +130,11 @@ async def play(ctx, *url):
         voice.play(discord.FFmpegPCMAudio(info, **FFMPEG_OPTIONS))
         await ctx.send(f"**Now Playing**: {title}")
 
-        while voice.is_playing() and voice.is_paused():  # Checks if voice is playing
+        while voice.is_playing() or voice.is_paused():  # Checks if voice is playing
             await asyncio.sleep(1)  # While it's playing it sleeps for 1 second
         else:
             await asyncio.sleep(5)  # If it's not playing it waits 15 seconds
-            while voice.is_playing() and voice.is_paused():  # and checks once again if the bot is not playing
+            while voice.is_playing() or voice.is_paused():  # and checks once again if the bot is not playing
                 break  # if it's playing it breaks
             else:
                 await voice.disconnect()
