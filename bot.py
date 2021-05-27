@@ -230,13 +230,20 @@ async def gif(ctx, *q):
         print('Exception when calling Api')
 
 @bot.command(help='Shows temperature and weather description of Surabaya')
-async def weather(ctx):
+async def weather(ctx, city):
 
-    page = requests.get('https://api.openweathermap.org/data/2.5/weather?q=Surabaya,ID-JI&units=metric&appid=149cb83a7a2314da84bbe7f857867adb')
-    resultDict = page.json()
+    if not city:
+        page = requests.get('https://api.openweathermap.org/data/2.5/weather?q=Surabaya,ID-JI&units=metric&appid=149cb83a7a2314da84bbe7f857867adb')
+        resultDict = page.json()
 
-    await ctx.send(f'Current temperature of Surabaya: {resultDict["main"]["temp"]} degrees Celcius')
-    await ctx.send(f'Weather description: {resultDict["weather"][0]["description"]}')
+        await ctx.send(f'Current temperature of Surabaya: {resultDict["main"]["temp"]} degrees Celcius')
+        await ctx.send(f'Weather description: {resultDict["weather"][0]["description"]}')
+    else:
+        page = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid=149cb83a7a2314da84bbe7f857867adb')
+        resultDict = page.json()
+
+        await ctx.send(f'Current temperature of {city.title()}: {resultDict["main"]["temp"]} degrees Celcius')
+        await ctx.send(f'Weather description: {resultDict["weather"][0]["description"]}')
 
 
 @bot.event
