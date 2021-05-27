@@ -207,7 +207,7 @@ async def create_channel(ctx, channel_name='real-python'):
 async def sauce(ctx):
     number = str(random.choice(range(100000, 360001)))
     await ctx.send(f'Here honey {number}')
-    await ctx.send(embed=discord.Embed(url=f'https://nhentai.net/g/{number}'))
+    #await ctx.send(embed=discord.Embed(url=f'https://nhentai.net/g/{number}'))
 
 @bot.command(help="Shows gif, leave blank for random gif or specificy keyword")
 async def gif(ctx, *q):
@@ -232,11 +232,11 @@ async def gif(ctx, *q):
 @bot.command(help='Shows temperature and weather description of Surabaya')
 async def weather(ctx):
 
-    page = requests.get('https://api.openweathermap.org/data/2.5/weather?q=Surabaya,ID-JT&units=imperial&appid=149cb83a7a2314da84bbe7f857867adb')
+    page = requests.get('https://api.openweathermap.org/data/2.5/weather?q=Surabaya,ID-JI&units=metric&appid=149cb83a7a2314da84bbe7f857867adb')
     resultDict = page.json()
 
-    await ctx.send('Current temperature of Surabaya: ' + resultDict['main']['temp'] + '\n'
-                   + 'Weather description: ' + resultDict['weather'][0]['description'])
+    await ctx.send(f'Current temperature of Surabaya: {resultDict["main"]["temp"]} degrees Celcius')
+    await ctx.send(f'Weather description: {resultDict["weather"][0]["description"]}')
 
 
 @bot.event
