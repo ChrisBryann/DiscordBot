@@ -2,6 +2,7 @@ asyncio
 async-generator
 async-timeout
 discord.py
+requests
 ffmpeg
 giphy-client
 PyNaCl

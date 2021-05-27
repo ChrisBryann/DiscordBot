@@ -6,6 +6,8 @@ import youtube_dl
 import asyncio
 import webbrowser
 import re
+import requests
+import json
 import giphy_client
 from giphy_client.rest import ApiException
 from dotenv import load_dotenv
@@ -226,6 +228,15 @@ async def gif(ctx, *q):
 
     except ApiException as e:
         print('Exception when calling Api')
+
+@bot.command(help='Shows temperature and weather description of Surabaya')
+async def weather(ctx):
+
+    page = requests.get('https://api.openweathermap.org/data/2.5/weather?q=Surabaya,ID-JT&units=imperial&appid=149cb83a7a2314da84bbe7f857867adb')
+    resultDict = page.json()
+
+    await ctx.send('Current temperature of Surabaya: ' + resultDict['main']['temp'] + '\n'
+                   + 'Weather description: ' + resultDict['weather'][0]['description'])
 
 
 @bot.event
