@@ -1,0 +1,1537 @@
+[
+   {
+      "meta": {
+         "id": "kick:1",
+         "uuid": "7afeb1bf-4a93-4fb6-be9f-3351b8e4559d",
+         "sort": "110032500",
+         "src": "collegiate",
+         "section": "alpha",
+         "stems": [
+            "kick",
+            "kick ass",
+            "kick butt",
+            "kick over the traces",
+            "kick the bucket",
+            "kick up her heels",
+            "kick up his heels",
+            "kick up its heels",
+            "kick up my heels",
+            "kick up one's heels",
+            "kick up our heels",
+            "kick up their heels",
+            "kick up your heels",
+            "kick upstairs",
+            "kickable",
+            "kicked",
+            "kicked ass",
+            "kicked butt",
+            "kicked over the traces",
+            "kicked the bucket",
+            "kicked up her heels",
+            "kicked up his heels",
+            "kicked up its heels",
+            "kicked up my heels",
+            "kicked up one's heels",
+            "kicked up our heels",
+            "kicked up their heels",
+            "kicked up your heels",
+            "kicked upstairs",
+            "kicking",
+            "kicking ass",
+            "kicking butt",
+            "kicking over the traces",
+            "kicking the bucket",
+            "kicking up her heels",
+            "kicking up his heels",
+            "kicking up its heels",
+            "kicking up my heels",
+            "kicking up one's heels",
+            "kicking up our heels",
+            "kicking up their heels",
+            "kicking up your heels",
+            "kicking upstairs",
+            "kicks",
+            "kicks ass",
+            "kicks butt",
+            "kicks over the traces",
+            "kicks the bucket",
+            "kicks up her heels",
+            "kicks up his heels",
+            "kicks up its heels",
+            "kicks up my heels",
+            "kicks up one's heels",
+            "kicks up our heels",
+            "kicks up their heels",
+            "kicks up your heels",
+            "kicks upstairs"
+         ],
+         "offensive": true
+      },
+      "hom": 1,
+      "hwi": {
+         "hw": "kick",
+         "prs": [
+            {
+               "mw": "\u02c8kik",
+               "sound": {
+                  "audio": "kick0001",
+                  "ref": "c",
+                  "stat": "1"
+               }
+            }
+         ]
+      },
+      "fl": "verb",
+      "ins": [
+         {
+            "if": "kicked"
+         },
+         {
+            "if": "kick*ing"
+         },
+         {
+            "if": "kicks"
+         }
+      ],
+      "def": [
+         {
+            "vd": "intransitive verb",
+            "sseq": [
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "1 a",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to strike out with the foot or feet"
+                           ]
+                        ]
+                     }
+                  ],
+                  [
+                     "sense",
+                     {
+                        "sn": "b",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to make a kick in football"
+                           ]
+                        ]
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "2 a",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to show opposition {bc}{sx|resist||}, {sx|rebel||}"
+                           ]
+                        ]
+                     }
+                  ],
+                  [
+                     "sense",
+                     {
+                        "sn": "b",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to protest strenuously or urgently {bc}express grave discontent"
+                           ]
+                        ],
+                        "sdsense": {
+                           "sd": "broadly",
+                           "dt": [
+                              [
+                                 "text",
+                                 "{bc}{sx|complain||}"
+                              ]
+                           ]
+                        }
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "3",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to function with vitality and energy "
+                           ],
+                           [
+                              "vis",
+                              [
+                                 {
+                                    "t": "alive and {wi}kicking{/wi}"
+                                 }
+                              ]
+                           ]
+                        ]
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "4",
+                        "sls": [
+                           "of a firearm"
+                        ],
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to recoil when fired"
+                           ]
+                        ]
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "5",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to go from one place to another as circumstance or whim dictates"
+                           ]
+                        ]
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "6",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to run at a faster speed during the last part of a race"
+                           ]
+                        ]
+                     }
+                  ]
+               ]
+            ]
+         },
+         {
+            "vd": "transitive verb",
+            "sseq": [
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "1 a",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to strike, thrust, or hit with the foot"
+                           ]
+                        ]
+                     }
+                  ],
+                  [
+                     "sense",
+                     {
+                        "sn": "b",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to strike suddenly and forcefully as if with the foot"
+                           ]
+                        ]
+                     }
+                  ],
+                  [
+                     "sense",
+                     {
+                        "sn": "c",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to remove by a {a_link|kicking} motion "
+                           ],
+                           [
+                              "vis",
+                              [
+                                 {
+                                    "t": "{wi}kicked{/wi} off her shoes"
+                                 }
+                              ]
+                           ]
+                        ]
+                     }
+                  ],
+                  [
+                     "sense",
+                     {
+                        "sn": "d",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to remove from a position or status "
+                           ],
+                           [
+                              "vis",
+                              [
+                                 {
+                                    "t": "{wi}kicked{/wi} him off the team"
+                                 }
+                              ]
+                           ]
+                        ]
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "2",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to score by kicking a ball"
+                           ]
+                        ]
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "3",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to heap reproaches upon (oneself) "
+                           ],
+                           [
+                              "vis",
+                              [
+                                 {
+                                    "t": "{wi}kicked{/wi} themselves for not going"
+                                 }
+                              ]
+                           ]
+                        ]
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "4",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to free oneself of (something, such as a drug habit)"
+                           ]
+                        ]
+                     }
+                  ]
+               ]
+            ]
+         }
+      ],
+      "uros": [
+         {
+            "ure": "kick*able",
+            "prs": [
+               {
+                  "mw": "\u02c8ki-k\u0259-b\u0259l",
+                  "sound": {
+                     "audio": "kickab01",
+                     "ref": "c",
+                     "stat": "1"
+                  }
+               }
+            ],
+            "fl": "adjective"
+         }
+      ],
+      "dros": [
+         {
+            "drp": "kick ass",
+            "def": [
+               {
+                  "sseq": [
+                     [
+                        [
+                           "sense",
+                           {
+                              "sls": [
+                                 "often vulgar"
+                              ],
+                              "dt": [
+                                 [
+                                    "text",
+                                    "{bc}to kick butt"
+                                 ]
+                              ]
+                           }
+                        ]
+                     ]
+                  ]
+               }
+            ]
+         },
+         {
+            "drp": "kick butt",
+            "def": [
+               {
+                  "sseq": [
+                     [
+                        [
+                           "sense",
+                           {
+                              "dt": [
+                                 [
+                                    "text",
+                                    "{bc}to use forceful or coercive measures in order to achieve a purpose"
+                                 ]
+                              ],
+                              "sdsense": {
+                                 "sd": "also",
+                                 "dt": [
+                                    [
+                                       "text",
+                                       "{bc}to succeed or win overwhelmingly"
+                                    ]
+                                 ]
+                              }
+                           }
+                        ]
+                     ]
+                  ]
+               }
+            ]
+         },
+         {
+            "drp": "kick over the traces",
+            "def": [
+               {
+                  "sseq": [
+                     [
+                        [
+                           "sense",
+                           {
+                              "dt": [
+                                 [
+                                    "text",
+                                    "{bc}to cast off restraint, authority, or control"
+                                 ]
+                              ]
+                           }
+                        ]
+                     ]
+                  ]
+               }
+            ]
+         },
+         {
+            "drp": "kick the bucket",
+            "def": [
+               {
+                  "sseq": [
+                     [
+                        [
+                           "sense",
+                           {
+                              "dt": [
+                                 [
+                                    "text",
+                                    "{bc}{sx|die||}"
+                                 ]
+                              ]
+                           }
+                        ]
+                     ]
+                  ]
+               }
+            ]
+         },
+         {
+            "drp": "kick up one's heels",
+            "def": [
+               {
+                  "sseq": [
+                     [
+                        [
+                           "sense",
+                           {
+                              "sn": "1",
+                              "dt": [
+                                 [
+                                    "text",
+                                    "{bc}to show sudden delight"
+                                 ]
+                              ]
+                           }
+                        ]
+                     ],
+                     [
+                        [
+                           "sense",
+                           {
+                              "sn": "2",
+                              "dt": [
+                                 [
+                                    "text",
+                                    "{bc}to have a lively time"
+                                 ]
+                              ]
+                           }
+                        ]
+                     ]
+                  ]
+               }
+            ]
+         },
+         {
+            "drp": "kick upstairs",
+            "def": [
+               {
+                  "sseq": [
+                     [
+                        [
+                           "sense",
+                           {
+                              "dt": [
+                                 [
+                                    "text",
+                                    "{bc}to promote to a higher but less desirable position"
+                                 ]
+                              ]
+                           }
+                        ]
+                     ]
+                  ]
+               }
+            ]
+         }
+      ],
+      "et": [
+         [
+            "text",
+            "Middle English {it}kiken{/it}"
+         ]
+      ],
+      "date": "14th century{ds|i|1|a|}",
+      "shortdef": [
+         "to strike out with the foot or feet",
+         "to make a kick in football",
+         "to show opposition : resist, rebel"
+      ]
+   },
+   {
+      "meta": {
+         "id": "kick:2",
+         "uuid": "d3802b6f-57c5-4ece-b816-b33c258f12b0",
+         "sort": "110032600",
+         "src": "collegiate",
+         "section": "alpha",
+         "stems": [
+            "for kicks",
+            "get a kick out of",
+            "gets a kick out of",
+            "getting a kick out of",
+            "got a kick out of",
+            "just for kicks",
+            "kick",
+            "kicks"
+         ],
+         "offensive": false
+      },
+      "hom": 2,
+      "hwi": {
+         "hw": "kick"
+      },
+      "fl": "noun",
+      "def": [
+         {
+            "sseq": [
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "1 a",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}a blow or sudden forceful thrust with the foot"
+                           ]
+                        ],
+                        "sdsense": {
+                           "sd": "specifically",
+                           "dt": [
+                              [
+                                 "text",
+                                 "{bc}a sudden propelling of a ball with the foot"
+                              ]
+                           ]
+                        }
+                     }
+                  ],
+                  [
+                     "sense",
+                     {
+                        "sn": "b",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}the power to kick"
+                           ]
+                        ]
+                     }
+                  ],
+                  [
+                     "sense",
+                     {
+                        "sn": "c",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}a rhythmic motion of the legs used in swimming"
+                           ]
+                        ]
+                     }
+                  ],
+                  [
+                     "sense",
+                     {
+                        "sn": "d",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}a burst of speed in racing"
+                           ]
+                        ]
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "2",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}a sudden forceful jolt or thrust suggesting a kick"
+                           ]
+                        ],
+                        "sdsense": {
+                           "sd": "especially",
+                           "dt": [
+                              [
+                                 "text",
+                                 "{bc}the recoil of a gun"
+                              ]
+                           ]
+                        }
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "3",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}{sx|pocket||}, {sx|wallet||}"
+                           ]
+                        ]
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "4 a",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}a feeling or expression of opposition or objection "
+                           ],
+                           [
+                              "vis",
+                              [
+                                 {
+                                    "t": "a {wi}kick{/wi} against the administration"
+                                 }
+                              ]
+                           ]
+                        ]
+                     }
+                  ],
+                  [
+                     "sense",
+                     {
+                        "sn": "b",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}the grounds for objection"
+                           ]
+                        ]
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "5 a",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}a powerful or forceful effect "
+                           ],
+                           [
+                              "vis",
+                              [
+                                 {
+                                    "t": "chili with a {wi}kick{/wi}"
+                                 }
+                              ]
+                           ]
+                        ]
+                     }
+                  ],
+                  [
+                     "sense",
+                     {
+                        "sn": "b",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}a stimulating or pleasurable effect or experience "
+                           ],
+                           [
+                              "uns",
+                              [
+                                 [
+                                    [
+                                       "text",
+                                       "often used in the phrases {phrase}get a kick out of{/phrase} and {phrase}(just) for kicks{/phrase} "
+                                    ]
+                                 ]
+                              ]
+                           ],
+                           [
+                              "vis",
+                              [
+                                 {
+                                    "t": "\u2026 we just got a big {wi}kick{/wi} out of seeing our names in the paper",
+                                    "aq": {
+                                       "auth": "Joel Stein"
+                                    }
+                                 },
+                                 {
+                                    "t": "She plays golf just for {wi}kicks{/wi} {gloss}=for fun{/gloss}."
+                                 }
+                              ]
+                           ]
+                        ]
+                     }
+                  ],
+                  [
+                     "sense",
+                     {
+                        "sn": "c",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}pursuit of an absorbing or obsessive new interest "
+                           ],
+                           [
+                              "uns",
+                              [
+                                 [
+                                    [
+                                       "text",
+                                       "usually used with {it}on{/it}"
+                                    ]
+                                 ]
+                              ]
+                           ],
+                           [
+                              "vis",
+                              [
+                                 {
+                                    "t": "{ldquo}\u2026 I'll get on a {wi}kick{/wi} though where I can't get enough of something, and it'll show up in everything. \u2026 {rdquo}",
+                                    "aq": {
+                                       "auth": "Danny Markowicz"
+                                    }
+                                 },
+                                 {
+                                    "t": "If you're on a post-Christmas health {wi}kick{/wi}, there are plenty of seasonal vegetables to keep you going \u2026",
+                                    "aq": {
+                                       "auth": "Caroline Lindsay"
+                                    }
+                                 }
+                              ]
+                           ]
+                        ]
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "6",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}{sx|kicker||2}"
+                           ]
+                        ]
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "7",
+                        "ins": [
+                           {
+                              "if": "kicks",
+                              "spl": "plural"
+                           }
+                        ],
+                        "sls": [
+                           "US slang"
+                        ],
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}shoes or sneakers "
+                           ],
+                           [
+                              "vis",
+                              [
+                                 {
+                                    "t": "\u2026 nothing draws more attention to a rare pair of {wi}kicks{/wi} than the cuffed hem of slim sweats.",
+                                    "aq": {
+                                       "auth": "Steve Dool"
+                                    }
+                                 }
+                              ]
+                           ]
+                        ]
+                     }
+                  ]
+               ]
+            ]
+         }
+      ],
+      "date": "1530{ds||1|a|}",
+      "shortdef": [
+         "a blow or sudden forceful thrust with the foot; specifically : a sudden propelling of a ball with the foot",
+         "the power to kick",
+         "a rhythmic motion of the legs used in swimming"
+      ]
+   },
+   {
+      "meta": {
+         "id": "kick around",
+         "uuid": "2ef1d27f-9eb7-4ae5-becc-5d858b221c42",
+         "sort": "110032700",
+         "src": "collegiate",
+         "section": "alpha",
+         "stems": [
+            "kick around",
+            "kicked around",
+            "kicking around",
+            "kicks around"
+         ],
+         "offensive": false
+      },
+      "hwi": {
+         "hw": "kick around"
+      },
+      "fl": "verb",
+      "ins": [
+         {
+            "if": "kicked around"
+         },
+         {
+            "if": "kick*ing around"
+         },
+         {
+            "if": "kicks around"
+         }
+      ],
+      "def": [
+         {
+            "vd": "intransitive verb",
+            "sseq": [
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "1",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to wander or pass time aimlessly"
+                           ]
+                        ]
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "2 a",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to lie about mostly unnoticed or forgotten"
+                           ]
+                        ]
+                     }
+                  ],
+                  [
+                     "sense",
+                     {
+                        "sn": "b",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to undergo consideration usually intermittently over a period of time "
+                           ],
+                           [
+                              "vis",
+                              [
+                                 {
+                                    "t": "ideas that have been {it}kicking around{/it} for years"
+                                 }
+                              ]
+                           ]
+                        ]
+                     }
+                  ]
+               ]
+            ]
+         },
+         {
+            "vd": "transitive verb",
+            "sseq": [
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "1",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to treat in an inconsiderate or high-handed fashion"
+                           ]
+                        ]
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "2",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to consider, examine, or discuss from various angles"
+                           ]
+                        ]
+                     }
+                  ]
+               ]
+            ]
+         }
+      ],
+      "date": "1839{ds|i|1||}",
+      "shortdef": [
+         "to wander or pass time aimlessly",
+         "to lie about mostly unnoticed or forgotten",
+         "to undergo consideration usually intermittently over a period of time"
+      ]
+   },
+   {
+      "meta": {
+         "id": "kick-ass",
+         "uuid": "101abfe0-8845-4469-ba7c-d9a54babc549",
+         "sort": "110032800",
+         "src": "collegiate",
+         "section": "alpha",
+         "stems": [
+            "kick-ass"
+         ],
+         "offensive": true
+      },
+      "hwi": {
+         "hw": "kick-ass",
+         "prs": [
+            {
+               "mw": "\u02c8kik-\u02ccas",
+               "sound": {
+                  "audio": "kicka01w",
+                  "ref": "c",
+                  "stat": "1"
+               }
+            }
+         ]
+      },
+      "fl": "adjective",
+      "def": [
+         {
+            "sls": [
+               "often vulgar"
+            ],
+            "sseq": [
+               [
+                  [
+                     "sense",
+                     {
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}strikingly or overwhelmingly tough, aggressive, powerful, or effective"
+                           ]
+                        ]
+                     }
+                  ]
+               ]
+            ]
+         }
+      ],
+      "date": "1970",
+      "shortdef": [
+         "strikingly or overwhelmingly tough, aggressive, powerful, or effective"
+      ]
+   },
+   {
+      "meta": {
+         "id": "kick back",
+         "uuid": "49921782-aa75-42b3-957f-79efb824455b",
+         "sort": "110033000",
+         "src": "collegiate",
+         "section": "alpha",
+         "stems": [
+            "kick back",
+            "kicked back",
+            "kicking back",
+            "kicks back"
+         ],
+         "offensive": false
+      },
+      "hwi": {
+         "hw": "kick back"
+      },
+      "fl": "verb",
+      "ins": [
+         {
+            "if": "kicked back"
+         },
+         {
+            "if": "kick*ing back"
+         },
+         {
+            "if": "kicks back"
+         }
+      ],
+      "def": [
+         {
+            "vd": "intransitive verb",
+            "sseq": [
+               [
+                  [
+                     "sense",
+                     {
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to assume a relaxed position or attitude"
+                           ]
+                        ],
+                        "sdsense": {
+                           "sd": "also",
+                           "dt": [
+                              [
+                                 "text",
+                                 "{bc}to spend time relaxing {bc}take it easy "
+                              ],
+                              [
+                                 "vis",
+                                 [
+                                    {
+                                       "t": "spent the weekend just {it}kicking back{/it}"
+                                    }
+                                 ]
+                              ]
+                           ]
+                        }
+                     }
+                  ]
+               ]
+            ]
+         }
+      ],
+      "date": "1972",
+      "shortdef": [
+         "to assume a relaxed position or attitude; also : to spend time relaxing : take it easy"
+      ]
+   },
+   {
+      "meta": {
+         "id": "kick in",
+         "uuid": "0c06a962-b808-4fdd-950d-95e880473691",
+         "sort": "110033400",
+         "src": "collegiate",
+         "section": "alpha",
+         "stems": [
+            "kick in",
+            "kicked in",
+            "kicking in",
+            "kicks in"
+         ],
+         "offensive": false
+      },
+      "hwi": {
+         "hw": "kick in"
+      },
+      "fl": "verb",
+      "ins": [
+         {
+            "if": "kicked in"
+         },
+         {
+            "if": "kick*ing in"
+         },
+         {
+            "if": "kicks in"
+         }
+      ],
+      "def": [
+         {
+            "vd": "transitive verb",
+            "sseq": [
+               [
+                  [
+                     "sense",
+                     {
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}{sx|contribute||}"
+                           ]
+                        ]
+                     }
+                  ]
+               ]
+            ]
+         },
+         {
+            "vd": "intransitive verb",
+            "sseq": [
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "1",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to begin operating or having an effect {bc}get started "
+                           ],
+                           [
+                              "vis",
+                              [
+                                 {
+                                    "t": "waiting for the heater to {it}kick in{/it}"
+                                 }
+                              ]
+                           ]
+                        ]
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "2",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to make a contribution"
+                           ]
+                        ]
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "3",
+                        "sls": [
+                           "slang"
+                        ],
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}{sx|die||}"
+                           ]
+                        ]
+                     }
+                  ]
+               ]
+            ]
+         }
+      ],
+      "date": "1906{ds|t|||}",
+      "shortdef": [
+         "contribute",
+         "to begin operating or having an effect : get started",
+         "to make a contribution"
+      ]
+   },
+   {
+      "meta": {
+         "id": "kick off",
+         "uuid": "731affe2-f329-4be1-9fd7-0dcce1c04fa8",
+         "sort": "110033600",
+         "src": "collegiate",
+         "section": "alpha",
+         "stems": [
+            "kick off",
+            "kicked off",
+            "kicking off",
+            "kicks off"
+         ],
+         "offensive": false
+      },
+      "hwi": {
+         "hw": "kick off"
+      },
+      "fl": "verb",
+      "ins": [
+         {
+            "if": "kicked off"
+         },
+         {
+            "if": "kick*ing off"
+         },
+         {
+            "if": "kicks off"
+         }
+      ],
+      "def": [
+         {
+            "vd": "intransitive verb",
+            "sseq": [
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "1",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to start or resume play in football by a {d_link|placekick|placekick:1}"
+                           ]
+                        ]
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "2 a",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to initiate proceedings"
+                           ]
+                        ]
+                     }
+                  ],
+                  [
+                     "sense",
+                     {
+                        "sn": "b",
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to start out {bc}{sx|begin||} "
+                           ],
+                           [
+                              "vis",
+                              [
+                                 {
+                                    "t": "the movie {it}kicks off{/it} with a bank robbery"
+                                 }
+                              ]
+                           ]
+                        ]
+                     }
+                  ]
+               ],
+               [
+                  [
+                     "sense",
+                     {
+                        "sn": "3",
+                        "sls": [
+                           "slang"
+                        ],
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}{sx|die||}"
+                           ]
+                        ]
+                     }
+                  ]
+               ]
+            ]
+         },
+         {
+            "vd": "transitive verb",
+            "sseq": [
+               [
+                  [
+                     "sense",
+                     {
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to mark the beginning of "
+                           ],
+                           [
+                              "vis",
+                              [
+                                 {
+                                    "t": "{it}kick off{/it} the campaign"
+                                 }
+                              ]
+                           ]
+                        ]
+                     }
+                  ]
+               ]
+            ]
+         }
+      ],
+      "date": "1857{ds|i|1||}",
+      "shortdef": [
+         "to start or resume play in football by a placekick",
+         "to initiate proceedings",
+         "to start out : begin"
+      ]
+   },
+   {
+      "meta": {
+         "id": "kick out",
+         "uuid": "40c889bc-a5ae-45d7-8a9e-ec6f90a46677",
+         "sort": "110033700",
+         "src": "collegiate",
+         "section": "alpha",
+         "stems": [
+            "kick out",
+            "kicked out",
+            "kicking out",
+            "kicks out"
+         ],
+         "offensive": false
+      },
+      "hwi": {
+         "hw": "kick out"
+      },
+      "fl": "verb",
+      "ins": [
+         {
+            "if": "kicked out"
+         },
+         {
+            "if": "kick*ing out"
+         },
+         {
+            "if": "kicks out"
+         }
+      ],
+      "def": [
+         {
+            "vd": "transitive verb",
+            "sseq": [
+               [
+                  [
+                     "sense",
+                     {
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to dismiss or eject forcefully or summarily"
+                           ]
+                        ]
+                     }
+                  ]
+               ]
+            ]
+         }
+      ],
+      "date": "1697",
+      "shortdef": [
+         "to dismiss or eject forcefully or summarily"
+      ]
+   },
+   {
+      "meta": {
+         "id": "kick over",
+         "uuid": "106eb537-c097-4f72-9dec-f2894bd72afc",
+         "sort": "110033800",
+         "src": "collegiate",
+         "section": "alpha",
+         "stems": [
+            "kick over",
+            "kicked over",
+            "kicking over",
+            "kicks over"
+         ],
+         "offensive": false
+      },
+      "hwi": {
+         "hw": "kick over"
+      },
+      "fl": "verb",
+      "ins": [
+         {
+            "if": "kicked over"
+         },
+         {
+            "if": "kick*ing over"
+         },
+         {
+            "if": "kicks over"
+         }
+      ],
+      "def": [
+         {
+            "vd": "intransitive verb",
+            "sseq": [
+               [
+                  [
+                     "sense",
+                     {
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}to begin to fire "
+                           ],
+                           [
+                              "uns",
+                              [
+                                 [
+                                    [
+                                       "text",
+                                       "used of an internal combustion engine"
+                                    ]
+                                 ]
+                              ]
+                           ]
+                        ]
+                     }
+                  ]
+               ]
+            ]
+         },
+         {
+            "vd": "transitive verb",
+            "sseq": [
+               [
+                  [
+                     "sense",
+                     {
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}{sx|turn over||1b}"
+                           ]
+                        ]
+                     }
+                  ]
+               ]
+            ]
+         }
+      ],
+      "date": "1951{ds|i|||}",
+      "shortdef": [
+         "to begin to fire \u2014used of an internal combustion engine",
+         "turn over"
+      ]
+   },
+   {
+      "meta": {
+         "id": "kick pleat",
+         "uuid": "d94e898c-ec9a-483f-ab75-9f1dba1d13c1",
+         "sort": "110033900",
+         "src": "collegiate",
+         "section": "alpha",
+         "stems": [
+            "kick pleat",
+            "kick pleats"
+         ],
+         "offensive": false
+      },
+      "hwi": {
+         "hw": "kick pleat"
+      },
+      "fl": "noun",
+      "def": [
+         {
+            "sseq": [
+               [
+                  [
+                     "sense",
+                     {
+                        "dt": [
+                           [
+                              "text",
+                              "{bc}a short inverted pleat (such as at the bottom of a skirt) used to give breadth"
+                           ]
+                        ]
+                     }
+                  ]
+               ]
+            ]
+         }
+      ],
+      "date": "1926",
+      "shortdef": [
+         "a short inverted pleat (such as at the bottom of a skirt) used to give breadth"
+      ]
+   }
+]

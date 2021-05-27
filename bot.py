@@ -246,6 +246,32 @@ async def weather(ctx, *city):
         await ctx.send(f'Current temperature of {city.title()}: {resultDict["main"]["temp"]} degrees Celcius')
         await ctx.send(f'Weather description: {resultDict["weather"][0]["description"]}')
 
+@bot.command()
+async def dict(ctx, word):
+    definitionList = []
+    if word:
+        page = requests.get(f'https://www.dictionaryapi.com/api/v3/references/collegiate/json/{word}?key=f3e01096-c637-4b63-b6c5-17483dba0190')
+        resultDict = page.json()
+        # definition = resultDict[0]['def'][0]['sseq'][0][0][1]['dt'][0][1]
+        # definition = definition.split('{bc}')
+        # if not 'sx' in definition[1]:
+        #     definition = definition[1]
+        # else: return
+
+        aList = resultDict[0]['def'][0]['sseq']  # [0][1]['dt'][0][1]
+        for item in aList:
+            data = item[0][1]['dt'][0][1].split('{bc}')[1]
+
+            if not 'sx' in data:
+                definitionList.append(data)
+
+        await ctx.send(f'Word: **{word.title()}**')
+        for i, define in enumerate(definitionList, 1):
+            await ctx.send(f'Definition {i}: {define}')
+
+    else:
+        await ctx.send('Where the word mofo?')
+        return
 
 @bot.event
 async def on_command_error(ctx, error):
