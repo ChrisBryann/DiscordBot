@@ -7,5 +7,6 @@ ffmpeg
 giphy-client
 PyNaCl
 python-dotenv
+pybooru
 youtube-dl
 wheel

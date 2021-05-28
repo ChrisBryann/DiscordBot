@@ -12,17 +12,18 @@ import giphy_client
 from giphy_client.rest import ApiException
 from dotenv import load_dotenv
 from discord.ext import commands
+from pybooru import Danbooru
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 GUILD = os.getenv('DISCORD_GUILD')
-
+DANBOORU = Danbooru('danbooru')
 intents = discord.Intents.default()
 intents.members = True
 help_command = commands.DefaultHelpCommand(
     no_category = 'Commands made by WotterMelown'
 )
-bot = commands.Bot(command_prefix='yen ', intents=intents, help_command=help_command)
+bot = commands.Bot(command_prefix=['yen ', 'Yen '], intents=intents, help_command=help_command)
 
 
 @bot.event
@@ -272,6 +273,22 @@ async def dict(ctx, word):
     else:
         await ctx.send('Where the word mofo?')
         return
+
+@bot.command()
+async def danbooru(ctx, *tag):
+    if not tag:
+        await ctx.send('where tag is yes')
+        return
+    else:
+        tag = '_'.join(tag)
+        aList = DANBOORU.post_list(limit=20, tags=tag)
+        print(aList)
+        if aList:
+            post = random.choice(aList)
+            image = post['file_url']
+            await ctx.send(image)
+        else:
+            await ctx.send('woops, danbooru ain\'t having that shit')
 
 @bot.event
 async def on_command_error(ctx, error):
