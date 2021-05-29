@@ -8,6 +8,7 @@ import webbrowser
 import re
 import requests
 import json
+from bs4 import BeautifulSoup
 import giphy_client
 from giphy_client.rest import ApiException
 from dotenv import load_dotenv
@@ -207,8 +208,21 @@ async def create_channel(ctx, channel_name='real-python'):
 @bot.command(help="Ya want some sauce?")
 async def sauce(ctx):
     number = str(random.choice(range(100000, 360001)))
-    await ctx.send(f'Here honey {number}')
-    #await ctx.send(embed=discord.Embed(url=f'https://nhentai.net/g/{number}'))
+
+    page = requests.get(f'https://nhentai.net/g/{number}', headers={
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36"
+    })
+    soup = BeautifulSoup(page.content, 'lxml')
+    print('ok')
+    elem = soup.find('div', id='bigcontainer')
+    title = elem.find('span', class_='pretty').text
+    image = elem.find('img')['data-src']
+    embed = discord.Embed(title=title, url=f'https://nhentai.net/g/{number}', color=discord.Color.red(), description=f'Here\'s the ID honey: {number}')
+    embed.set_thumbnail(url=image)
+
+    await ctx.send(embed=embed)
+
+
 
 @bot.command(help="Shows gif, leave blank for random gif or specificy keyword")
 async def gif(ctx, *q):
@@ -281,8 +295,7 @@ async def danbooru(ctx, *tag):
         return
     else:
         tag = '_'.join(tag)
-        aList = DANBOORU.post_list(limit=20, tags=tag)
-        print(aList)
+        aList = DANBOORU.post_list(limit=50, tags=tag)
         if aList:
             post = random.choice(aList)
             image = post['file_url']
