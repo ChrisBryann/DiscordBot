@@ -208,19 +208,21 @@ async def create_channel(ctx, channel_name='real-python'):
 @bot.command(help="Ya want some sauce?")
 async def sauce(ctx):
     number = str(random.choice(range(100000, 360001)))
+    await ctx.send(f'Here honey {number}')
+    await ctx.send(f'https://nhentai.net/g/{number}')
 
-    page = requests.get(f'https://nhentai.net/g/{number}', headers={
-    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36"
-    })
-    soup = BeautifulSoup(page.content, 'lxml')
-    print('ok')
-    elem = soup.find('div', id='bigcontainer')
-    title = elem.find('span', class_='pretty').text
-    image = elem.find('img')['data-src']
-    embed = discord.Embed(title=title, url=f'https://nhentai.net/g/{number}', color=discord.Color.red(), description=f'Here\'s the ID honey: {number}')
-    embed.set_thumbnail(url=image)
-
-    await ctx.send(embed=embed)
+    # page = requests.get(f'https://nhentai.net/g/{number}', headers={
+    # "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36"
+    # })
+    # soup = BeautifulSoup(page.content, 'lxml')
+    # print('ok')
+    # elem = soup.find('div', id='bigcontainer')
+    # title = elem.find('span', class_='pretty').text
+    # image = elem.find('img')['data-src']
+    # embed = discord.Embed(title=title, url=f'https://nhentai.net/g/{number}', color=discord.Color.red(), description=f'Here\'s the ID honey: {number}')
+    # embed.set_thumbnail(url=image)
+    #
+    # await ctx.send(embed=embed)
 
 
 
