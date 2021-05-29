@@ -1,6 +1,7 @@
 asyncio
 async-generator
 async-timeout
+bs4
 discord.py
 requests
 ffmpeg
