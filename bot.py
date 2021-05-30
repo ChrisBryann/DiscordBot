@@ -14,11 +14,16 @@ from giphy_client.rest import ApiException
 from dotenv import load_dotenv
 from discord.ext import commands
 from pybooru import Danbooru
+from hentai import Hentai, Format
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 GUILD = os.getenv('DISCORD_GUILD')
 DANBOORU = Danbooru('danbooru')
+word_headers = {
+    'x-rapidapi-key': "1cbdad4150msh72e9b55eed74ad8p1fad8cjsn55ddaa3526f6",
+    'x-rapidapi-host': "wordsapiv1.p.rapidapi.com"
+    }
 intents = discord.Intents.default()
 intents.members = True
 help_command = commands.DefaultHelpCommand(
@@ -205,22 +210,39 @@ async def create_channel(ctx, channel_name='real-python'):
         print(f'Creating a new channel: {channel_name}')
         await guild.create_text_channel(channel_name)
 
+
 @bot.command(help="Ya want some sauce?")
 async def sauce(ctx):
     number = str(random.choice(range(100000, 360001)))
-    await ctx.send(f'Here honey {number}')
+    # page = requests.get(f'https://nhentai.net/api/gallery/{number}')
+    # doujin = page.json()
+    # title = doujin['title']['pretty']
+    # cover_id = doujin['media_id']
+    # cover = f'https://t.nhentai.net/galleries/{cover_id}/cover.jpg'
+    # tagList = []
+    # for item in doujin['tags']:
+    #     if item['type'] == 'tag':
+    #         tagList.append(item['artist'])
+    #     elif item['type'] == 'name':
+    #         artist = item['name']
+    #     else:
+    #         language = item['language']
+    # pages = doujin['num_pages']
+    # embed = discord.Embed(title=title, url=f'https://nhentai.net/g/{number}', color=discord.Color.red(),
+    #                       description=f'Total pages: {str(pages)}')
+    # embed.set_author(name=artist)
+    # embed.set_thumbnail(url=cover)
+    # await ctx.send(embed=embed)
+
     await ctx.send(f'https://nhentai.net/g/{number}')
 
-    # page = requests.get(f'https://nhentai.net/g/{number}', headers={
-    # "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36"
-    # })
-    # soup = BeautifulSoup(page.content, 'lxml')
-    # print('ok')
-    # elem = soup.find('div', id='bigcontainer')
-    # title = elem.find('span', class_='pretty').text
-    # image = elem.find('img')['data-src']
-    # embed = discord.Embed(title=title, url=f'https://nhentai.net/g/{number}', color=discord.Color.red(), description=f'Here\'s the ID honey: {number}')
-    # embed.set_thumbnail(url=image)
+    # print(number, type(number))
+    # doujin = Hentai(number)
+    # print('not okay')
+    # embed = discord.Embed(title=doujin.title(), url=doujin.url, color=discord.Color.red(), description=f'Total pages: {str(doujin.pages)}')
+    # embed.set_author(name=', '.join([artist.name for artist in doujin.artist]))
+    # embed.set_thumbnail(url=doujin.cover)
+    # await ctx.send(embed=embed)
     #
     # await ctx.send(embed=embed)
 
@@ -265,26 +287,16 @@ async def weather(ctx, *city):
 
 @bot.command()
 async def dict(ctx, word):
-    definitionList = []
     if word:
-        page = requests.get(f'https://www.dictionaryapi.com/api/v3/references/collegiate/json/{word}?key=f3e01096-c637-4b63-b6c5-17483dba0190')
+        page = requests.request("GET", f"https://wordsapiv1.p.rapidapi.com/words/{word}", headers=word_headers)
         resultDict = page.json()
-        # definition = resultDict[0]['def'][0]['sseq'][0][0][1]['dt'][0][1]
-        # definition = definition.split('{bc}')
-        # if not 'sx' in definition[1]:
-        #     definition = definition[1]
-        # else: return
 
-        aList = resultDict[0]['def'][0]['sseq']  # [0][1]['dt'][0][1]
-        for item in aList:
-            data = item[0][1]['dt'][0][1].split('{bc}')[1]
-
-            if not 'sx' in data:
-                definitionList.append(data)
-
+        syllables = '-'.join(resultDict['syllables']['list'])
         await ctx.send(f'Word: **{word.title()}**')
-        for i, define in enumerate(definitionList, 1):
-            await ctx.send(f'Definition {i}: {define}')
+        for i, definition in enumerate(resultDict['results'], 1):
+            await ctx.send(f'**{i}.** **Definition**: {definition["definition"]} ({definition["partOfSpeech"]})')
+            await ctx.send(f'**Synonyms**: {", ".join(definition["synonyms"])}')
+        await ctx.send(f'**Syllables**: {syllables}')
 
     else:
         await ctx.send('Where the word mofo?')
