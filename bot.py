@@ -13,13 +13,10 @@ import giphy_client
 from giphy_client.rest import ApiException
 from dotenv import load_dotenv
 from discord.ext import commands
-from pybooru import Danbooru
-from hentai import Hentai, Format
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 GUILD = os.getenv('DISCORD_GUILD')
-DANBOORU = Danbooru('danbooru')
 word_headers = {
     'x-rapidapi-key': "1cbdad4150msh72e9b55eed74ad8p1fad8cjsn55ddaa3526f6",
     'x-rapidapi-host': "wordsapiv1.p.rapidapi.com"
