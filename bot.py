@@ -291,12 +291,17 @@ async def dict(ctx, *word):
         page = requests.request("GET", f"https://wordsapiv1.p.rapidapi.com/words/{word}", headers=word_headers)
         resultDict = page.json()
 
-        syllables = '-'.join(resultDict['syllables']['list'])
+        try:
+            syllables = '-'.join(resultDict['syllables']['list'])
+        except:
+            syllables = None
         await ctx.send(f'Word: **{word.title()}**')
         for i, definition in enumerate(resultDict['results'], 1):
             await ctx.send(f'**{i}.** **Definition**: {definition["definition"]} ({definition["partOfSpeech"]})')
             await ctx.send(f'**Synonyms**: {", ".join(definition["synonyms"])}')
-        await ctx.send(f'**Syllables**: {syllables}')
+
+        if syllables:
+            await ctx.send(f'**Syllables**: {syllables}')
 
     else:
         await ctx.send('Where the word mofo?')
