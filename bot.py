@@ -287,7 +287,7 @@ async def weather(ctx, *city):
 @bot.command()
 async def dict(ctx, *word):
     if word:
-        word = ' '.join(word)
+        word = '%20'.join(word)
         page = requests.request("GET", f"https://wordsapiv1.p.rapidapi.com/words/{word}", headers=word_headers)
         resultDict = page.json()
 
