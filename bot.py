@@ -285,8 +285,9 @@ async def weather(ctx, *city):
         await ctx.send(f'Weather description: {resultDict["weather"][0]["description"]}')
 
 @bot.command()
-async def dict(ctx, word):
+async def dict(ctx, *word):
     if word:
+        word = ' '.join(word)
         page = requests.request("GET", f"https://wordsapiv1.p.rapidapi.com/words/{word}", headers=word_headers)
         resultDict = page.json()
 
