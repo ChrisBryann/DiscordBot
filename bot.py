@@ -323,6 +323,27 @@ async def danbooru(ctx, *tag):
         else:
             await ctx.send('woops, danbooru ain\'t having that shit')
 
+@bot.command()
+async def love(ctx, *name):
+    fname = name[0]
+    sname = name[1]
+
+    url = "https://love-calculator.p.rapidapi.com/getPercentage"
+
+    querystring = {"fname": fname, "sname": sname}
+
+    headers = {
+        'x-rapidapi-key': "1cbdad4150msh72e9b55eed74ad8p1fad8cjsn55ddaa3526f6",
+        'x-rapidapi-host': "love-calculator.p.rapidapi.com"
+    }
+
+    response = requests.request("GET", url, headers=headers, params=querystring)
+    page = response.json()
+    embed = discord.Embed(title=f'{fname.title()} x {sname.title()}', color=discord.Color.purple(), description=f'Your love compability is: {page["percentage"]}%')
+    embed.add_field(name='Advice of the Day', value=page['result'])
+
+    await ctx.send(embed=embed)
+
 @bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.errors.CheckFailure):
