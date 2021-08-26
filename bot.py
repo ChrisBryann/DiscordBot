@@ -318,7 +318,7 @@ async def danbooru(ctx, *tag):
         aList = DANBOORU.post_list(limit=50, tags=tag)
         if aList:
             post = random.choice(aList)
-            image = post['file_url']
+            image = '|| ' +  post['file_url']  + ' ||'
             await ctx.send(image)
         else:
             await ctx.send('woops, danbooru ain\'t having that shit')
