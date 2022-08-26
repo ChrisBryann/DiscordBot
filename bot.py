@@ -13,7 +13,6 @@ import giphy_client
 from giphy_client.rest import ApiException
 from dotenv import load_dotenv
 from discord.ext import commands
-from pybooru import Danbooru
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -28,6 +27,7 @@ intents.members = True
 help_command = commands.DefaultHelpCommand(
     no_category = 'Commands made by WotterMelown'
 )
+NOT_PRESENT = "I'm not present in any voice channel."
 bot = commands.Bot(command_prefix=['yen ', 'Yen '], intents=intents, help_command=help_command)
 
 
@@ -50,21 +50,6 @@ async def on_member_join(member):
     channel = discord.utils.get(member.guild.channels, name="general")
     lines = [
         f'Hi {member.name}, welcome to the server baby :)',
-        f'Oh look, {member.name} is here. Fucking bitch.'
-        f'Welcome to Lil Family {member.name}, motherfucker.',
-        f'Konichiwa {member.name}! Ochinchin daisuki!',
-        f"Hello {member.name}! You’re the reason God created the middle finger.",
-        f"Hello {member.name}! You’re a grey sprinkle on a rainbow cupcake.",
-        f"Hello {member.name}! If your brain was dynamite, there wouldn’t be enough to blow your hat off.",
-        f"Hello {member.name}! You are more disappointing than an unsalted pretzel.",
-        f"Hello {member.name}! Light travels faster than sound which is why you seemed bright until you spoke.",
-        f"Hello {member.name}! We were happily married for one month, but unfortunately we’ve been married for 10 years.",
-        f"Hello {member.name}! Your kid is so annoying, he makes his Happy Meal cry.",
-        f"Hello {member.name}! You have so many gaps in your teeth it looks like your tongue is in jail.",
-       f"Hello {member.name}! Your secrets are always safe with me. I never even listen when you tell me them.",
-        f"Hello {member.name}! I’ll never forget the first time we met. But I’ll keep trying.",
-        f"Hello {member.name}! I forgot the world revolves around you. My apologies, how silly of me.",
-        f"Hello {member.name}! I only take you everywhere I go just so I don’t have to kiss you goodbye."
     ]
     await channel.send(
         random.choice(lines)
@@ -74,33 +59,32 @@ async def on_member_remove(member):
     channel = discord.utils.get(member.guild.channels, name="general")
     await channel.send(f'See ya {member.name}!')
 
-@bot.command(name="keneo", help="GET OVER HERE!")
+@bot.command(name="enter", help="Enter the user's voice channel")
 async def join(ctx):
     voice = discord.utils.get(bot.voice_clients, guild=ctx.guild)
     if voice:
-        await ctx.send("Ak wes masuk masbro")
+        await ctx.send("I'm already in.")
         return
 
     channel = ctx.author.voice.channel
 
     await channel.connect()
-    await ctx.send('Opoo bro')
 
 
 
-@bot.command(name="metuo", help="Nengkreo cok!")
+@bot.command(name="disconnect", help="disconnect from a voice channel")
 async def leave(ctx):
     voice = discord.utils.get(bot.voice_clients, guild=ctx.guild)
     if voice and voice.is_connected():
         await ctx.voice_client.disconnect()
     else:
-        await ctx.send("Aku gak onok ndek channel entot")
+        await ctx.send(NOT_PRESENT)
 
 @bot.command()
 async def play(ctx, *url):
 
         if not url:
-            await ctx.send("Ndi lagune bro")
+            await ctx.send("Please provide a song title.")
             return
         url = " ".join(url)
 
@@ -108,7 +92,7 @@ async def play(ctx, *url):
             channel = ctx.author.voice.channel
             await channel.connect()
         except:
-            await ctx.send('Sek lah jek onok lagu main iki. Pakek "stop" lek mau main lagu laen')
+            await ctx.send('Currently playing. Please type "stop" to stop playing.')
             return
         voice = discord.utils.get(bot.voice_clients, guild=ctx.guild)
 
@@ -150,21 +134,21 @@ async def play(ctx, *url):
 async def pause(ctx):
     voice = discord.utils.get(bot.voice_clients, guild=ctx.guild)
     if not voice:
-        await ctx.send("Aku gak onok ndek channel entot")
+        await ctx.send(NOT_PRESENT)
     elif voice.is_playing():
         voice.pause()
     else:
-        await ctx.send("wes tak pause asem")
+        await ctx.send("Music is already paused.")
 
 @bot.command()
 async def resume(ctx):
     voice = discord.utils.get(bot.voice_clients, guild=ctx.guild)
     if not voice:
-        await ctx.send("Aku gak onok ndek channel entot")
+        await ctx.send(NOT_PRESENT)
     elif voice.is_paused():
         voice.resume()
     else:
-        await ctx.send("woi! suarane ws jalan anjengg")
+        await ctx.send("Music is already playing.")
 
 @bot.command()
 async def stop(ctx):
@@ -173,30 +157,13 @@ async def stop(ctx):
         voice.stop()
         await ctx.voice_client.disconnect()
     else:
-        await ctx.send("Aku gak onok ndek channel entot")
-
-@bot.command(name='kimochi', help="Responds with a loud cry of sexual tensions")
-async def kimochi(ctx):
-    kimochi = [
-        'Daisuki!',
-        'Yamete!',
-        'Senpai!',
-        'Oka-san!',
-        'Onii-san yamete kudasai!'
-    ]
-
-    response = random.choice(kimochi)
-    await ctx.send(response)
-    
-@bot.command(name='fuck', help='nah fam')
-async def no_u(ctx):
-    await ctx.send("no u.")
+        await ctx.send("I'm not present in any voice channel.")
 
 @bot.command(name='roll_dice', help='Simulates rolling dice.')
 async def roll(ctx):
     dice = str(random.choice(range(1,8)))
     if dice == '7':
-        await ctx.send("You got william'ed!")
+        await ctx.send("You are very lucky!")
     else:
         await ctx.send("You got " + dice + "!")
 
@@ -208,42 +175,6 @@ async def create_channel(ctx, channel_name='real-python'):
     if not existing_channel:
         print(f'Creating a new channel: {channel_name}')
         await guild.create_text_channel(channel_name)
-
-
-@bot.command(help="Ya want some sauce?")
-async def sauce(ctx):
-    number = str(random.choice(range(100000, 360001)))
-    # page = requests.get(f'https://nhentai.net/api/gallery/{number}')
-    # doujin = page.json()
-    # title = doujin['title']['pretty']
-    # cover_id = doujin['media_id']
-    # cover = f'https://t.nhentai.net/galleries/{cover_id}/cover.jpg'
-    # tagList = []
-    # for item in doujin['tags']:
-    #     if item['type'] == 'tag':
-    #         tagList.append(item['artist'])
-    #     elif item['type'] == 'name':
-    #         artist = item['name']
-    #     else:
-    #         language = item['language']
-    # pages = doujin['num_pages']
-    # embed = discord.Embed(title=title, url=f'https://nhentai.net/g/{number}', color=discord.Color.red(),
-    #                       description=f'Total pages: {str(pages)}')
-    # embed.set_author(name=artist)
-    # embed.set_thumbnail(url=cover)
-    # await ctx.send(embed=embed)
-
-    await ctx.send(f'https://nhentai.net/g/{number}')
-
-    # print(number, type(number))
-    # doujin = Hentai(number)
-    # print('not okay')
-    # embed = discord.Embed(title=doujin.title(), url=doujin.url, color=discord.Color.red(), description=f'Total pages: {str(doujin.pages)}')
-    # embed.set_author(name=', '.join([artist.name for artist in doujin.artist]))
-    # embed.set_thumbnail(url=doujin.cover)
-    # await ctx.send(embed=embed)
-    #
-    # await ctx.send(embed=embed)
 
 
 
@@ -305,23 +236,8 @@ async def dict(ctx, *word):
             await ctx.send(f'**Syllables**: {syllables}')
 
     else:
-        await ctx.send('Where the word mofo?')
+        await ctx.send('Please provide a word to describe.')
         return
-
-@bot.command()
-async def danbooru(ctx, *tag):
-    if not tag:
-        await ctx.send('where tag is yes')
-        return
-    else:
-        tag = '_'.join(tag)
-        aList = DANBOORU.post_list(limit=50, tags=tag)
-        if aList:
-            post = random.choice(aList)
-            image = '|| ' +  post['file_url']  + ' ||'
-            await ctx.send(image)
-        else:
-            await ctx.send('woops, danbooru ain\'t having that shit')
 
 @bot.command()
 async def love(ctx, *name):
