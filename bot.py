@@ -13,6 +13,7 @@ import giphy_client
 from giphy_client.rest import ApiException
 from dotenv import load_dotenv
 from discord.ext import commands
+import mechanicalsoup
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -259,6 +260,70 @@ async def love(ctx, *name):
     embed.add_field(name='Advice of the Day', value=page['result'])
 
     await ctx.send(embed=embed)
+
+@bot.command()
+async def classes(ctx):
+    session = requests.Session()
+
+    browser = mechanicalsoup.StatefulBrowser(session, soup_config={'features': 'lxml'})
+    browser.open('https://www.ics.uci.edu/ugrad/courses/index-course')
+
+    browser.select_form('#course_search') #selects the one only form
+    browser.page.find(value='Upper-Division')['selected'] = ''
+    browser.page.find(value='CS')['selected'] = ''
+    browser.submit_selected()
+    courses = browser.page.find_all(lambda tag: tag.name == 'td' and tag.get('class') == ['hidden'])
+    courseList = []
+    for i in range(0, len(courses), 2):
+        courseList.append({'name': courses[i].text.strip()})
+
+    dates = browser.page.find_all(lambda tag: tag.name == 'td' and tag.get('class') == ['instruction'])
+
+    for i in range(0, len(dates), 4):
+        fall, winter, spring, _ = dates[i].text.strip(), dates[i + 1].text.strip(), dates[i + 2].text.strip(), dates[i + 3].text
+        if fall:
+            courseList[i // 4]['Fall'] = fall.replace('(2)', '')
+        if winter:
+            courseList[i // 4]['Winter'] = winter.replace('(2)', '')
+        if spring:
+            courseList[i // 4]['Spring'] = spring.replace('(2)', '')
+    pages = []
+    for course in courseList:
+        embed = discord.Embed(
+            title = f"**{course['name']}**",
+            description = ('Fall: ' + course['Fall']) if 'Fall' in course else '' + ('\nWinter: ' + course['Winter']) if 'Winter' in course else '' + ('\nSpring: ' + course['Spring']) if 'Spring' in course else ''
+        )
+        pages.append(embed)
+    
+    message = await ctx.send(embed=pages[0])
+
+    await message.add_reaction('⏮️')
+    await message.add_reaction('⏭️')
+
+    check = lambda reaction, user: user == ctx.author
+    n = len(pages)
+    i = 0
+    reaction = None
+    while True:
+        if str(reaction) == '⏮️':
+            if i > 0:
+                i -= 1
+                await message.edit(embed=pages[i])
+        elif str(reaction) == '⏭️':
+            if i < n:
+                i += 1
+                await message.edit(embed=pages[i])
+
+        try:
+            reaction, user = await bot.wait_for('reaction_add', timeout= 30.0, check=check)
+            await message.remove_reaction(reaction, user)
+        except:
+            break
+    
+    await messasge.clear_reactions()
+
+    
+                
 
 @bot.event
 async def on_command_error(ctx, error):
