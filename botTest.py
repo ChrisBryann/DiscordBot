@@ -404,7 +404,7 @@ async def classes(ctx):
         except:
             break
     
-    await messasge.clear_reactions()
+    await message.clear_reactions()
 
 @bot.event
 async def on_command_error(ctx, error):

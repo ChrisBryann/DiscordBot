@@ -320,7 +320,7 @@ async def classes(ctx):
         except:
             break
     
-    await messasge.clear_reactions()
+    await message.clear_reactions()
 
     
                 
