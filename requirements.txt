@@ -11,3 +11,5 @@ python-dotenv
 pybooru
 youtube-dl
 wheel
+mechanicalsoup
+beautifulsoup4
