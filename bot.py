@@ -178,7 +178,7 @@ async def create_channel(ctx, channel_name='real-python'):
 @bot.command(help="Shows gif, leave blank for random gif or specificy keyword")
 async def gif(ctx, *q):
 
-    api_key = 'dVz0BwTa4VCUOTBXrDJqKtuzzLqFmYWe'
+    api_key = os.getenv('GIF_API')
     api_instance = giphy_client.DefaultApi()
 
     try:
@@ -199,14 +199,14 @@ async def gif(ctx, *q):
 async def weather(ctx, *city):
 
     if not city:
-        page = requests.get('https://api.openweathermap.org/data/2.5/weather?q=Surabaya,ID-JI&units=metric&appid=149cb83a7a2314da84bbe7f857867adb')
+        page = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q=Surabaya,ID-JI&units=metric&appid={os.getenv('WEATHER_API'}')
         resultDict = page.json()
 
         await ctx.send(f'Current temperature of Surabaya: {resultDict["main"]["temp"]} degrees Celcius')
         await ctx.send(f'Weather description: {resultDict["weather"][0]["description"]}')
     else:
         city = ' '.join(city)
-        page = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid=149cb83a7a2314da84bbe7f857867adb')
+        page = requests.get(f'https://api.openweathermap.org/data/2.5/weather?q={city}&units=metric&appid={os.getenv('WEATHER_API')}')
         resultDict = page.json()
 
         await ctx.send(f'Current temperature of {city.title()}: {resultDict["main"]["temp"]} degrees Celcius')
@@ -246,7 +246,7 @@ async def love(ctx, *name):
     querystring = {"fname": fname, "sname": sname}
 
     headers = {
-        'x-rapidapi-key': "1cbdad4150msh72e9b55eed74ad8p1fad8cjsn55ddaa3526f6",
+        'x-rapidapi-key': os.getenv('LOVE_API'),
         'x-rapidapi-host': "love-calculator.p.rapidapi.com"
     }
 
